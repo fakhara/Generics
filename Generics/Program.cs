@@ -4,12 +4,51 @@ public class Program
  {
     private static void Main(string[] args)
     {
-        var list = new ListOfNumbers<int>();
-        list.AddNumber(10);
-        list.AddNumber(20);
+        // Skapa ett PractiseList<int> objekt
+        PractiseList<int> intList = new PractiseList<int>();
 
-        Console.WriteLine(list.GetNumber(1));
-        Console.WriteLine("Count: " + list.Count);
+        // Fyll listan med minst 3 items
+        intList.AddItem(5);
+        intList.AddItem(10);
+        intList.AddItem(15);
+
+        // Hämta och skriv ut samtliga items i intList
+        List<int> items = intList.GetItems();
+        Console.WriteLine("Items in intList:");
+        foreach (int item in items)
+        {
+            Console.WriteLine(item);
+        }
+
+        // Skapa ett PractiseList<string> objekt
+        PractiseList<string> stringList = new PractiseList<string>();
+        
+        // Fyll listan med minst 5 items
+        stringList.AddItem("Apple");
+        stringList.AddItem("Banana");
+        stringList.AddItem("Cherry");
+        stringList.AddItem("Date");
+        stringList.AddItem("Elderberry");
+
+        // Hämta och skriv ut det tredje item i stringList
+        List<string> items1 = stringList.GetItems();
+        Console.WriteLine("Det tredje item i stringList är:");
+        if (items1.Count >= 3)
+        {
+            Console.WriteLine(items1[2]); // Index 2 motsvarar det tredje elementet
+        }
+        else
+        {
+            Console.WriteLine("Listan har färre än tre items.");
+        }
+
+
+        /* var list = new ListOfNumbers<int>();
+         list.AddNumber(10);
+         list.AddNumber(20);
+
+         Console.WriteLine(list.GetNumber(1));
+         Console.WriteLine("Count: " + list.Count);*/
 
         // Step 2: Create a List<Car> with at least 4 cars
         List<Car> cars = new List<Car>

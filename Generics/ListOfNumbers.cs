@@ -10,25 +10,25 @@ namespace Generics
     public class ListOfNumbers<T>
     {
         //List<T> replaces the need for manual resizing, as List automatically resizes when new items are added.
-        private List<T> numbers;
+        private List<T> _numbers;
         public ListOfNumbers()
         {
-            numbers = new List<T>();
+            _numbers = new List<T>();
         }
 
         public void AddNumber(T newNumber)
         {
-            numbers.Add(newNumber);
+            _numbers.Add(newNumber);
         }
         // The GetNumber method include a check to ensure that the requested index is valid
         public T GetNumber(int index)
         {
-            if(index < 0 || index >= numbers.Count)
+            if(index < 0 || index >= _numbers.Count)
             {
                 throw new IndexOutOfRangeException("Index is out of range");
             }
-            return numbers[index];
+            return _numbers[index];
         }
-        public int Count => numbers.Count;
+        public int Count => _numbers.Count;
     }
 }
